@@ -2,51 +2,74 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>My First Task - Webpage</title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact & To-Do • ApexPlanet Demo</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <h1>Welcome to My First Webpage</h1>
+  <!-- ░░░ Sticky Navigation ░░░ -->
+  <header class="site-header">
+    <nav class="navbar container">
+      <h1 class="brand">ApexPlanet</h1>
 
-  <h2>About This Page</h2>
-  <p>
-    This is a sample webpage created as part of my internship at ApexPlanet.
-    It contains basic HTML, CSS, and JavaScript.
-  </p>
+      <button class="hamburger" aria-label="Toggle menu"></button>
 
-  <h2>Technology Stack</h2>
-  <div class="tech-logos">
-    <img
-      class="logo"
-      src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg"
-      alt="HTML 5 Logo"
-      width="100"
-    />
-    <img
-      class="logo"
-      src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg"
-      alt="CSS 3 Logo"
-      width="100"
-    />
-    <img
-      class="logo"
-      src="https://upload.wikimedia.org/wikipedia/commons/d/dc/Javascript-shield.png"
-      alt="JavaScript Logo"
-      width="100"
-    />
-  </div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#contact">Contact Form</a></li>
+        <li><a href="#todo">To-Do List</a></li>
+      </ul>
+    </nav>
+  </header>
+<!-- ░░░ Hero ░░░ -->
+  <section id="home" class="hero">
+    <div class="container">
+      <h2>Intermediate&nbsp;HTML, CSS&nbsp;&amp;&nbsp;JavaScript</h2>
+      <p class="subtitle">Task-2</p>
+    </div>
+  </section>
 
-  <p>
-    Visit
-    <a href="https://www.apexplanet.in" target="_blank">ApexPlanet Software Pvt Ltd</a>
-    for more info.
-  </p>
+  <!-- ░░ Two-column wrapper ░░ -->
+  <main class="split-wrapper container">
+    <!-- ◤ Contact Form ◢ -->
+    <section id="contact" class="card form-card">
+      <h2>Contact Us</h2>
+      <form id="contactForm" novalidate>
+        <label>Name
+          <input type="text" name="name" required minlength="2" />
+        </label>
 
-  <button onclick="showAlert()">Click Me!</button>
+        <label>Email
+          <input type="email" name="email" required />
+        </label>
 
-  <script src="script.js"></script>
+        <label>Message
+          <textarea name="message" rows="4" required></textarea>
+        </label>
 
+        <button type="submit">Send</button>
+        <p class="form-msg" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <!-- ◤ To-Do List ◢ -->
+    <section id="todo" class="card todo-card">
+      <h2>My To-Do List</h2>
+      <form id="todoForm" class="todo-form">
+        <input type="text" id="todoInput"
+               placeholder="E.g. Cycling…" required />
+        <button>Add</button>
+      </form>
+      <ul id="todoList" class="todo-list"></ul>
+    </section>
+  </main>
+
+  <!-- ░░ Footer ░░ -->
+  <footer class="site-footer">
+    &copy; 2025 ApexPlanet 
+  </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
